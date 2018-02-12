@@ -7,9 +7,14 @@
 // Document Ready Function. All of your jQuery should go in here. 
 $( document ).ready(function() {
   
-	
+	function sentenceToPigLatin (sentence) {
+		return sentence.split(" ");
+		for(sentence = 0; sentence < sentence.length; i++){
+			
+		}
+	}
 
-
+console.log("Hello there beautiful");
 });
 
 

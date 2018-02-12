@@ -2,11 +2,7 @@
     text-align: center;
 }
 
-#textBox {
-    text-align: center;
-}
-
 #gif {
     height: 300px;
-    width: 1000px;
+    width: 100%;
 }
