@@ -8,20 +8,23 @@
 $( document ).ready(function() {
   
 	function sentenceToPigLatin (sentence) {
-		return sentence.split(" ");
-		for(sentence = 0; sentence < sentence.length; i++){
-			
+		for(i = 0; i < sentence.length; i++){
+			return sentence.split(" ");
 		}
 	}
 
-console.log("Hello there beautiful");
 });
 
 
 // Create the wordToPigLatin function that takes a word as a parameter and returns a transfromed word. 
 
+function wordToPigLatin (x) {
+	for (i = 0; i < x.length; i++){
+		return x + "ay";
+	}
+}
 
-
+console.log(wordToPigLatin("Hello"))
 
 
 
