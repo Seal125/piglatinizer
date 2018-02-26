@@ -6,25 +6,34 @@
 
 // Document Ready Function. All of your jQuery should go in here. 
 $( document ).ready(function() {
-  
+	
+
+	
+	function wordToPigLatin (word) {
+		for (var i = 0; i < word.length; i++){
+			return word + "ay";
+	}
+}
+	
 	function sentenceToPigLatin (sentence) {
-		for(i = 0; i < sentence.length; i++){
-			return sentence.split(" ");
+		for(var i = 0; i < sentence.length; i++){
+			var words = sentence.split(" ");
+			var pigLatinizedWords = " ";
+			for (var k = 0; k < words.length; k++) {
+			   var word = words[k];
+			   var pigLatinizedWord = wordToPigLatin(word);
+				pigLatinizedWords = pigLatinizedWords + pigLatinizedWord;
+			}
 		}
+		return pigLatinizedWords;
 	}
 
-});
-
+console.log(sentenceToPigLatin("Words are cool"));
 
 // Create the wordToPigLatin function that takes a word as a parameter and returns a transfromed word. 
 
-function wordToPigLatin (x) {
-	for (i = 0; i < x.length; i++){
-		return x + "ay";
-	}
-}
 
-console.log(wordToPigLatin("Hello"))
+
 
 
 
@@ -33,3 +42,4 @@ console.log(wordToPigLatin("Hello"))
 	//It should return a transfromed sentance
 
 
+});
