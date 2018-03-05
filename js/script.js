@@ -7,11 +7,13 @@
 // Document Ready Function. All of your jQuery should go in here. 
 $( document ).ready(function() {
 	
-
-	
-	function wordToPigLatin (word) {
+	function wordToPigLatin (wordy) {
 		for (var i = 0; i < word.length; i++){
-			return word + "ay";
+			if (startsWithAVowel(wordy)) {
+		    	return wordy + "ay"; 
+		    } else {
+		        return wordy.slice(1) + wordy[0] + "ay";
+		    }
 	}
 }
 	
@@ -28,18 +30,23 @@ $( document ).ready(function() {
 		return pigLatinizedWords;
 	}
 
-console.log(sentenceToPigLatin("Words are cool"));
+	function startsWithAVowel(word) {
+  var firstLetter = word[0].toLowerCase();
+  
+  if (firstLetter === "a" || firstLetter === "e" || firstLetter === "i" || firstLetter === "o" || firstLetter === "u") {
+    return true;
+  } else {
+    return false;
+  }
+}
 
-// Create the wordToPigLatin function that takes a word as a parameter and returns a transfromed word. 
-
-
-
-
-
-
-// Create the sentenceToPigLatin function that takes a sentence as a parameter
-	//Loops through all the words in the sentence and transforms each word
-	//It should return a transfromed sentance
+		$('#button').click(function(){
+		var sentency = $('#input').val();
+		var piglatin = sentenceToPigLatin(sentency);
+		$('#display').text(piglatin);
+	});
+	
+console.log(sentenceToPigLatin("Eat"));
 
 
 });
